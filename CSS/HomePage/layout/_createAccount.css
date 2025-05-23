@@ -1,0 +1,52 @@
+/* Main layout */
+body>div:not([w3-include-html]) {
+  flex: 1;
+}
+
+/* Footer styles */
+div[w3-include-html="footer.html"] {
+  background: #f0f0f0;
+  padding: 1rem;
+  width: 100%;
+}
+
+/* Headings */
+h1 {
+  color: #333;
+}
+
+/* Form container */
+.form-container {
+  padding: 40px 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Form styling */
+.create-account-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.create-account-form input {
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 0;
+}
+
+.create-account-form button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create-account-form button:hover {
+  background-color: #808080;
+}

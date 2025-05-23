@@ -1,0 +1,117 @@
+<?php
+require 'php/connection.php';
+
+// Get featured products
+$products = [];
+$result = mysqli_query($con, "
+    SELECT p.*, c.name AS category_name 
+    FROM products p
+    JOIN categories c ON p.category_id = c.category_id
+    ORDER BY p.created_at DESC
+    LIMIT 6
+");
+
+while ($row = mysqli_fetch_assoc($result)) {
+  $products[] = $row;
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Shoo Sports </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="CSS/HomePage/Main.css">
+  <script src="JavaScript/HomePage/Buttons.js"></script>
+</head>
+
+<body>
+  <!-- Links header -->
+  <div w3-include-html="header.html"></div>
+  <!-- Hero Section (the backgound image is in _hero.css)-->
+  <section class="hero">
+    <div class="hero-content">
+      <h2 class="hero-subtitle">SUMMER SALE</h2>
+      <h1 class="hero-title">NEW COLLECTION</h1>
+      <h3 class="seasonal-collection"> SUMMER COLLECTION </h3>
+    </div>
+  </section>
+
+  <section class="fullwidth-categories">
+    <!-- Women's Banner -->
+    <div class="category-banner women">
+      <img src="./Images/image2.jpg" alt="Women's collection" class="banner-image">
+      <div class="banner-content">
+        <div class="text-group">
+          <span class="collection-tag">BASICS BY SHOOSTORE</span>
+          <h2>SHIRTS & TOPS</h2>
+          <a href="#" class="shop-now-btn">Shop Women →</a>
+        </div>
+      </div>
+    </div>
+    <!-- Men's Banner -->
+    <div class="category-banner men">
+      <img src="./Images/image1.jpg" alt="Men's collection" class="banner-image">
+      <div class="banner-content">
+        <div class="text-group">
+          <span class="collection-tag">ESSENTIALS BY SHOO STORE</span>
+          <h2>T-SHIRTS & POLOS</h2>
+          <a href="#" class="shop-now-btn">Shop Men →</a>
+        </div>
+      </div>
+    </div>
+    <!-- Men's Banner (copy and pasted, edit later)-->
+    <div class="category-banner men">
+      <img src="./Images/image3.jpg" alt="Men's collection" class="banner-image">
+      <div class="banner-content">
+        <div class="text-group">
+          <span class="collection-tag">ESSENTIALS BY SHOO STORE</span>
+          <h2>T-SHIRTS & POLOS</h2>
+          <a href="#" class="shop-now-btn">Shop Men →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="featured-products">
+      <div class="product-carousel">
+        <button class="carousel-btn prev-btn">‹</button>
+        <div class="carousel-container">
+          <div class="carousel-track">
+            <?php foreach ($products as $product): ?>
+              <div class="product-card">
+                <div class="product-image">
+                  <img src="<?= $product['image'] ?>" alt="<?= $product['name'] ?>">
+                </div>
+                <div class="product-info">
+                  <h3 class="product-name"><?= $product['name'] ?></h3>
+                  <p class="price">$<?= number_format($product['price'], 2) ?></p>
+                  <a href="product_detail.php?id=<?= $product['product_id'] ?>" class="choose-options">
+                    Choose options
+                  </a>
+                </div>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        </div>
+        <button class="carousel-btn next-btn">›</button>
+      </div>
+      <div class="button-container">
+        <a href="products.php" class="view-all-btn">View New Collection</a>
+      </div>
+    </section>
+  </main>
+  <!-- Imports Footer-->
+  <div w3-include-html="footer.html"></div>
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
+  <script>
+    w3.includeHTML();
+  </script>
+
+</body>
+
+</html>

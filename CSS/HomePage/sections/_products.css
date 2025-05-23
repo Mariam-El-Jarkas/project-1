@@ -1,0 +1,117 @@
+.featured-products {
+  background-color: var(--white);
+  font-family:sans-serif
+}
+
+/* Carousel Container */
+.product-carousel {
+  position: relative;
+
+  margin: 20px 20px;
+  padding: 0 60px; /* Space for buttons */
+}
+
+.carousel-container {
+  overflow: hidden; /* Hide overflowing cards */
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s ease; /* Smooth sliding animation */
+  padding: 10px 0;
+}
+
+.product-card {
+  flex: 0 0 250px;
+  background: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Navigation Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background:rgb(255, 255, 255);
+  color: var(--box-shadow);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-btn:hover{
+  background-color:var(--secondary-color);
+}
+
+.prev-btn {
+  left: 0;
+}
+
+.carousel-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.carousel-container {
+  overflow: hidden;
+}
+
+.next-btn {
+  right: 0;
+}
+
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+/* "Choose Options" Button */
+.choose-options {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  background: var(--white);
+  color: black;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.choose-options:hover {
+  background-color: var(--secondary-color);
+}
+.button-container{
+  text-align: center;
+}
+.view-all-btn {
+  display: inline-block;
+  margin-top: 50px;
+  padding: 20px 40px;
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  transition: all 0.4s ease;
+  text-decoration: none;
+  margin-bottom: 100px;
+}
+
+.view-all-btn:hover {
+  background-color: var(--secondary-color);
+}

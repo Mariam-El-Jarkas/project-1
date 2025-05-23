@@ -1,0 +1,21 @@
+/* Base */
+@import './base/_reset.css';
+@import './base/_variables.css';
+@import './base/_utilities.css';
+
+/* Layout */
+@import './layout/_footer.css';
+@import './layout/_grid.css';
+@import './layout/_header.css';
+@import './layout/_responsive.css';
+
+/* Components */
+@import './components/_buttons.css';
+@import './components/_cards.css';
+@import './components/_navigation.css';
+
+/* Sections */
+@import './sections/_hero.css';
+@import './sections/_products.css';
+@import './sections/_sidebar.css';
+@import './sections/_categories.css';

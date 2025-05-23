@@ -1,0 +1,34 @@
+.footer {
+  background-color: white;
+  color: black;
+  padding: 30px 0; /* Added padding top and bottom */
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* This centers content vertically */
+  min-height: 150px; /* Increased minimum height */
+}
+
+.social-links {
+  margin: 0 auto; /* Centers horizontally */
+  padding: 10px 0; /* Added padding top and bottom */
+}
+
+.social-links a {
+  color: black;
+  font-size: 1.5rem;
+  margin: 0 15px; /* Slightly increased horizontal spacing */
+  transition: var(--transition);
+  display: inline-block; /* Better for spacing */
+}
+
+.social-links a:hover {
+  color: var(--secondary-color);
+  transform: translateY(-3px); /* Optional: Adds a slight lift effect on hover */
+}
+
+.footer p {
+  margin-top: 15px; /* Space between social links and copyright */
+  margin-bottom: 0; /* Remove default bottom margin */
+}
