@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
   menuToggle.addEventListener("click", function () {
     this.classList.toggle("active");
     mainNav.classList.toggle("active");
-
     // // Toggle body overflow when menu is open
     // if (mainNav.classList.contains("active")) {
     //   document.body.style.overflow = "hidden";

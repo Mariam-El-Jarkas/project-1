@@ -214,3 +214,6 @@
 .toggle > i {
   pointer-events: none;
 }
+.toggle i.hidden {
+  display: none;
+}

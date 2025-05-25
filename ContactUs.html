@@ -3,11 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="stylesheet" href="./CSS/HomePage/layout/_contact.css"> 
+    <link rel="stylesheet" href="\CSS\HomePage\layout/contact.css" />
     <title>Document</title>
   </head>
   <body>
-    <div w3-include-html="header.html"></div>
+    <header class="header">
+      <!-- Mobile Menu Toggle (far left) -->
+      <div class="toggle" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-x hidden"></i>
+      </div>
+
+      <!-- Title (left) -->
+      <a href="Home.html" class="title">Shoo Store</a>
+
+      <nav class="main-nav active" id="mainNav">
+        <ul class="nav-links">
+          <li><a href="Home.html" class="nav-link">Home</a></li>
+          <li class="dropdown">
+            <a href="#" class="nav-link has-dropdown"
+              ><span> Women </span>
+              <i class="fas fa-chevron-down dropdown-arrow hidden"></i>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="./Shirts&Tops(W).html">Shirts & Tops</a></li>
+              <li><a href="./Bottoms(W).html">Bottoms</a></li>
+              <li><a href="./Footwear(W).html">Footwear</a></li>
+              <li><a href="./Accessories(W).html">Accessories</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">
+              <span>Men</span>
+              <i class="fas fa-chevron-down dropdown-arrow hidden"></i>
+              <i class="fa-solid fa-arrow-right"></i
+            ></a>
+            <ul class="dropdown-menu">
+              <li><a href="./Shirts&Tops(M).html">Shirts & Tops</a></li>
+              <li><a href="./Bottoms(M).html">Bottoms</a></li>
+              <li><a href="./Footwear(M).html">Footwear</a></li>
+              <li><a href="./Accessories(M).html">Accessories</a></li>
+            </ul>
+          </li>
+          <li><a href="ContactUs.html">Contact</a></li>
+          <li><a href="policy.html">Policy</a></li>
+          <li><a href="AboutUs.html">About us</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <div class="search-container">
+          <input type="text" class="search-input" placeholder="Search..." />
+          <a href="#" class="icon-link"><i class="fas fa-search"></i></a>
+        </div>
+        <a href="login.html" class="icon-link"><i class="far fa-user"></i></a>
+        <div class="cart-icon-container">
+          <a href="#" class="icon-link"
+            ><i class="fa-solid fa-bag-shopping"></i
+          ></a>
+          <span class="cart-counter">0</span>
+        </div>
+      </div>
+    </header>
     <div class="content-container">
       <h1>Customer Service</h1>
 
@@ -17,14 +75,16 @@
       </p>
 
       <div class="working-hours">
-      We're available Monday through Saturday, from 10 AM to 5 PM.
+        We're available Monday through Saturday, from 10 AM to 5 PM.
       </div>
 
       <div class="contact-methods">
         <h2>Contact us via:</h2>
 
         <div class="contact-platform">
-         <a href="https://www.instagram.com/shoosports.lb/"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.instagram.com/shoosports.lb/"
+            ><i class="fab fa-instagram"></i
+          ></a>
           Instagram DMs:
           <a href="https://www.instagram.com/shoosports.lb/ " target="_blank"
             >@shoosports.lb</a
@@ -32,7 +92,9 @@
         </div>
 
         <div class="contact-platform">
-          <a href="https://wa.me/+96170172689"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://wa.me/+96170172689"
+            ><i class="fab fa-whatsapp"></i
+          ></a>
           Whatsapp:
           <a href="https://wa.me/+96170172689"> 70172689</a>
         </div>
@@ -44,4 +106,5 @@
       w3.includeHTML();
     </script>
   </body>
+  <script src="JavaScript/HomePage/Buttons.js"></script>
 </html>
