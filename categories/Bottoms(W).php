@@ -45,6 +45,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
                     <ul class="dropdown-menu">
+                    <li><a href="../categories/women.php">View All</a></li>
                         <li><a href="./Shirts&Tops(W).php">Shirts & Tops</a></li>
                         <li><a href="./Bottoms(W).php">Bottoms</a></li>
                         <li><a href="./Footwear(W).php">Footwear</a></li>
@@ -58,6 +59,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
                     <ul class="dropdown-menu">
+                    <li><a href="../categories/men.php">View All</a></li>
                         <li><a href="./Shirts&Tops(M).php">Shirts & Tops</a></li>
                         <li><a href="./Bottoms(M).php">Bottoms</a></li>
                         <li><a href="./Footwear(M).php">Footwear</a></li>
@@ -77,7 +79,7 @@ while ($row = mysqli_fetch_assoc($result)) {
             </div>
             <a href="../login.php" class="icon-link"><i class="far fa-user"></i></a>
             <div class="cart-icon-container">
-                <a href="#" class="icon-link"><i class="fa-solid fa-bag-shopping"></i></a>
+                <a href="#" class="icon-link" onclick="toggleCart()"><i class="fa-solid fa-bag-shopping"></i></a>
                 <span class="cart-counter">0</span>
             </div>
         </div>
@@ -90,7 +92,7 @@ while ($row = mysqli_fetch_assoc($result)) {
                 <?php foreach ($products as $product): ?>
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="<?= htmlspecialchars($product['image']) ?>" alt="<?= htmlspecialchars($product['name']) ?>">
+                            <img src="../<?= htmlspecialchars($product['image']) ?>" alt="<?= htmlspecialchars($product['name']) ?>">
                         </div>
                         <div class="product-info">
                             <h3><?= htmlspecialchars($product['name']) ?></h3>

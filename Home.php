@@ -26,9 +26,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     <link rel="stylesheet" href="CSS/HomePage/Main.css">
     <link rel="stylesheet" href="CSS/HomePage/layout/_header.css">
     <link rel="stylesheet" href="CSS/HomePage/sections/_hero.css">
-
-    
-
+  <script src="./JavaScript/Header/cart.js"> </script>
   </head>
 
   <body>
@@ -52,6 +50,7 @@ while ($row = mysqli_fetch_assoc($result)) {
               <i class="fa-solid fa-arrow-right"></i>
             </a>
             <ul class="dropdown-menu">
+            <li><a href="categories/women.php">View All</a></li>
               <li><a href="./categories/Shirts&Tops(W).php">Shirts & Tops</a></li>
               <li><a href="./categories/Bottoms(W).php">Bottoms</a></li>
               <li><a href="./categories/Footwear(W).php">Footwear</a></li>
@@ -64,6 +63,7 @@ while ($row = mysqli_fetch_assoc($result)) {
               <i class="fas fa-chevron-down dropdown-arrow hidden"></i>
               <i class="fa-solid fa-arrow-right"></i></a>
             <ul class="dropdown-menu">
+            <li><a href="categories/men.php">View All</a></li>
               <li><a href="./categories/Shirts&Tops(M).php">Shirts & Tops</a></li>
               <li><a href="./categories/Bottoms(M).php">Bottoms</a></li>
               <li><a href="./categories/Footwear(M).php">Footwear</a></li>
@@ -83,8 +83,9 @@ while ($row = mysqli_fetch_assoc($result)) {
         </div>
         <a href="login.php" class="icon-link"><i class="far fa-user"></i></a>
         <div class="cart-icon-container">
-          <a href="#" class="icon-link"><i class="fa-solid fa-bag-shopping"></i></a>
+          <a href="#" class="icon-link" onclick="toggleCart()"><i class="fa-solid fa-bag-shopping"></i></a>
           <span class="cart-counter">0</span>
+
         </div>
       </div>
     </header>
@@ -100,34 +101,34 @@ while ($row = mysqli_fetch_assoc($result)) {
     <section class="fullwidth-categories">
            <!-- Men's Banner -->
            <div class="category-banner men">
-        <img src="./Images/image2.jpg" alt="Men's collection" class="banner-image">
+        <img src="Images/image1.jpg" alt="Men's collection" class="banner-image">
         <div class="banner-content">
           <div class="text-group">
             <span class="collection-tag">ESSENTIALS BY SHOO STORE</span>
-            <h2>T-SHIRTS & POLOS</h2>
-            <a href="./men.php" class="shop-now-btn">Shop Men →</a>
+            <h2>Women's Sneakers & Shoes</h2>
+            <a href="../project/categories/women.php" class="shop-now-btn">Shop Women →</a>
           </div>
         </div>
       </div>
       <!-- Women's Banner -->
       <div class="category-banner women">
-        <img src="./Images/image1.jpg" class="banner-image">
+        <img src="Images/image2.jpg" class="banner-image">
         <div class="banner-content">
           <div class="text-group">
             <span class="collection-tag">BASICS BY SHOOSTORE</span>
-            <h2>SHIRTS & TOPS</h2>
-            <a href="./women.php" class="shop-now-btn">Shop Women →</a>
+            <h2>Latest Kicks</h2>
+            <a href="../project/categories/Allitems.php" class="shop-now-btn">Shop US →</a>
           </div>
         </div>
       </div>
       <!-- Men's Banner (copy and pasted, edit later)-->
       <div class="category-banner men">
-        <img src="./Images//image3.jpg" alt="Men's collection" class="banner-image">
+        <img src="./Images/image3.jpg" alt="Men's collection" class="banner-image">
         <div class="banner-content">
           <div class="text-group">
             <span class="collection-tag">ESSENTIALS BY SHOO STORE</span>
-            <h2>T-SHIRTS & POLOS</h2>
-            <a href="./men.php" class="shop-now-btn">Shop Men →</a>
+            <h2>Men's Sneakers & Shoes</h2>
+            <a href="categories/men.php" class="shop-now-btn">Shop Men →</a>
           </div>
         </div>
       </div>
@@ -158,7 +159,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         </div>
         <button class="carousel-btn next-btn">›</button>
       </div>
-      <center><a href="Allitems.php" class="view-all-btn">View New Collection</a></center>
+      <center><a href="categories/Allitems.php" class="view-all-btn">View All Collection</a></center>
       
 
     </section>
