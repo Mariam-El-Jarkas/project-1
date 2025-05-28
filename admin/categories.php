@@ -41,6 +41,18 @@ $result = mysqli_query($con, "
 while ($row = mysqli_fetch_assoc($result)) {
     $subcategories[] = $row;
 }
+if (isset($_POST['delete_category'])) {
+    $category_id = intval($_POST['category_id']);
+
+    // Delete subcategories first (to maintain foreign key constraints)
+    $sql = "DELETE FROM subcategories WHERE category_id = $category_id";
+    mysqli_query($con, $sql);
+
+    // Then delete the category
+    $sql = "DELETE FROM categories WHERE category_id = $category_id";
+    mysqli_query($con, $sql);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -102,7 +114,11 @@ while ($row = mysqli_fetch_assoc($result)) {
                         </td>
                         <td>
                             <button class="edit-btn">Edit</button>
-                            <button class="delete-btn">Delete</button>
+                            <form method="POST" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this category?');">
+    <input type="hidden" name="category_id" value="<?= $cat['category_id'] ?>">
+    <button type="submit" name="delete_category" class="delete-btn">Delete</button>
+</form>
+
                         </td>
                     </tr>
                     <?php endforeach; ?>
